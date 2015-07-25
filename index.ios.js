@@ -13,32 +13,57 @@ var {
   Text,
   TouchableHighlight,
   View,
+  NativeAppEventEmitter
 } = React;
 
-var MCDJ = React.createClass({
-  render: function() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <TouchableHighlight onPress={this.onPressButton}>
-          <Text>Show Media Player Mofo</Text>
-        </TouchableHighlight>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
-  },
-  onPressButton : function () {
-    console.log('press butotn');
-    MediaController.showSongs();
-  }
+class MCDJ extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = this.getInitialState();
+        this.bindMethods();
+    }
+    bindMethods() {
+        if (! this.bindableMethods) {
+            return;
+        }   
+
+        for (var methodName in this.bindableMethods) {
+            this[methodName] = this.bindableMethods[methodName].bind(this);
+        }
+    }
+
+    getInitialState() {
+        return {
+            songPlaying : 'None'
+        }
+    }
+
+    componentDidMount() {
+        NativeAppEventEmitter.addListener('SongPlaying', (songName) => this.setState({songPlaying : songName}))
+    }
+
+
+};
+
+Object.assign(MCDJ.prototype, {
+    bindableMethods : {
+        render : function() {
+            return (
+              <View style={styles.container}>
+                <Text style={styles.welcome}>
+                  Welcome to Modus DJ
+                </Text>
+                <TouchableHighlight onPress={() => this.onPressButton()}>
+                  <Text>Pick Song</Text>
+                </TouchableHighlight>
+                <Text>Song Playing: {this.state.songPlaying}</Text>
+              </View>
+            );
+        },
+        onPressButton : function () {
+            MediaController.showSongs();
+        }
+    }
 });
 
 var styles = StyleSheet.create({

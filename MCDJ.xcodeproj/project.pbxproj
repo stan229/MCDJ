@@ -26,6 +26,13 @@
 		886ADF911B58C85700B90751 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 886ADF901B58C85700B90751 /* MediaPlayer.framework */; };
 		886ADF9D1B58C96700B90751 /* MediaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 886ADF9C1B58C96700B90751 /* MediaController.m */; };
 		886ADFA01B58D9A900B90751 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 886ADF9F1B58D9A900B90751 /* AVFoundation.framework */; };
+		88958BF21B62FA1700786C4C /* AudioFileReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88958BEB1B62FA1700786C4C /* AudioFileReader.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		88958BF31B62FA1700786C4C /* AudioFileWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 88958BED1B62FA1700786C4C /* AudioFileWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		88958BF41B62FA1700786C4C /* Novocaine.m in Sources */ = {isa = PBXBuildFile; fileRef = 88958BEF1B62FA1700786C4C /* Novocaine.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		88958BF51B62FA1700786C4C /* RingBuffer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88958BF11B62FA1700786C4C /* RingBuffer.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		88958BF81B62FBFC00786C4C /* NovocaineController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88958BF71B62FBFC00786C4C /* NovocaineController.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		88958BFA1B62FF1C00786C4C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88958BF91B62FF1C00786C4C /* AudioToolbox.framework */; };
+		88958BFC1B62FF2400786C4C /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88958BFB1B62FF2400786C4C /* CoreAudio.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +141,18 @@
 		886ADF9C1B58C96700B90751 /* MediaController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaController.m; sourceTree = "<group>"; };
 		886ADF9E1B58C97900B90751 /* MediaController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaController.h; sourceTree = "<group>"; };
 		886ADF9F1B58D9A900B90751 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		88958BEA1B62FA1700786C4C /* AudioFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFileReader.h; sourceTree = "<group>"; };
+		88958BEB1B62FA1700786C4C /* AudioFileReader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioFileReader.mm; sourceTree = "<group>"; };
+		88958BEC1B62FA1700786C4C /* AudioFileWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFileWriter.h; sourceTree = "<group>"; };
+		88958BED1B62FA1700786C4C /* AudioFileWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioFileWriter.m; sourceTree = "<group>"; };
+		88958BEE1B62FA1700786C4C /* Novocaine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Novocaine.h; sourceTree = "<group>"; };
+		88958BEF1B62FA1700786C4C /* Novocaine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Novocaine.m; sourceTree = "<group>"; };
+		88958BF01B62FA1700786C4C /* RingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RingBuffer.h; sourceTree = "<group>"; };
+		88958BF11B62FA1700786C4C /* RingBuffer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RingBuffer.mm; sourceTree = "<group>"; };
+		88958BF61B62FBFC00786C4C /* NovocaineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NovocaineController.h; sourceTree = "<group>"; };
+		88958BF71B62FBFC00786C4C /* NovocaineController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NovocaineController.mm; sourceTree = "<group>"; };
+		88958BF91B62FF1C00786C4C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		88958BFB1B62FF2400786C4C /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +167,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88958BFC1B62FF2400786C4C /* CoreAudio.framework in Frameworks */,
+				88958BFA1B62FF1C00786C4C /* AudioToolbox.framework in Frameworks */,
 				886ADFA01B58D9A900B90751 /* AVFoundation.framework in Frameworks */,
 				886ADF911B58C85700B90751 /* MediaPlayer.framework in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
@@ -251,6 +272,8 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 				886ADF9E1B58C97900B90751 /* MediaController.h */,
 				886ADF9C1B58C96700B90751 /* MediaController.m */,
+				88958BF61B62FBFC00786C4C /* NovocaineController.h */,
+				88958BF71B62FBFC00786C4C /* NovocaineController.mm */,
 			);
 			name = MCDJ;
 			sourceTree = "<group>";
@@ -299,6 +322,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				88958BFB1B62FF2400786C4C /* CoreAudio.framework */,
+				88958BF91B62FF1C00786C4C /* AudioToolbox.framework */,
+				88958BE91B62FA1700786C4C /* Novocaine */,
 				886ADF9F1B58D9A900B90751 /* AVFoundation.framework */,
 				886ADF901B58C85700B90751 /* MediaPlayer.framework */,
 				13B07FAE1A68108700A75B9A /* MCDJ */,
@@ -317,6 +343,21 @@
 				00E356EE1AD99517003FC87E /* MCDJTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		88958BE91B62FA1700786C4C /* Novocaine */ = {
+			isa = PBXGroup;
+			children = (
+				88958BEA1B62FA1700786C4C /* AudioFileReader.h */,
+				88958BEB1B62FA1700786C4C /* AudioFileReader.mm */,
+				88958BEC1B62FA1700786C4C /* AudioFileWriter.h */,
+				88958BED1B62FA1700786C4C /* AudioFileWriter.m */,
+				88958BEE1B62FA1700786C4C /* Novocaine.h */,
+				88958BEF1B62FA1700786C4C /* Novocaine.m */,
+				88958BF01B62FA1700786C4C /* RingBuffer.h */,
+				88958BF11B62FA1700786C4C /* RingBuffer.mm */,
+			);
+			path = Novocaine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -541,7 +582,12 @@
 			files = (
 				886ADF9D1B58C96700B90751 /* MediaController.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				88958BF41B62FA1700786C4C /* Novocaine.m in Sources */,
+				88958BF51B62FA1700786C4C /* RingBuffer.mm in Sources */,
+				88958BF31B62FA1700786C4C /* AudioFileWriter.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				88958BF81B62FBFC00786C4C /* NovocaineController.mm in Sources */,
+				88958BF21B62FA1700786C4C /* AudioFileReader.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +655,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_INPUT_FILETYPE = automatic;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -625,6 +672,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_INPUT_FILETYPE = automatic;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,

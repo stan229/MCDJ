@@ -58,7 +58,4 @@
   return YES;
 }
 
--(void) switchBackToMain {
-  self.window.rootViewController = self.rootViewController;
-}
 @end
