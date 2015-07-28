@@ -13,7 +13,8 @@ var {
   Text,
   TouchableHighlight,
   View,
-  NativeAppEventEmitter
+  NativeAppEventEmitter,
+  SliderIOS
 } = React;
 
 class MCDJ extends React.Component {
@@ -49,40 +50,75 @@ Object.assign(MCDJ.prototype, {
     bindableMethods : {
         render : function() {
             return (
-              <View style={styles.container}>
-                <Text style={styles.welcome}>
-                  Welcome to Modus DJ
-                </Text>
-                <TouchableHighlight onPress={() => this.onPressButton()}>
-                  <Text>Pick Song</Text>
-                </TouchableHighlight>
-                <Text>Song Playing: {this.state.songPlaying}</Text>
+                <View style={styles.mainContainer}>
+                    <View style={styles.container}>
+                        <Text style={styles.welcome}>
+                          Welcome to Modus DJ
+                        </Text>
+                        <TouchableHighlight onPress={() => this.onPressButton()}>
+                          <Text>Pick Song</Text>
+                        </TouchableHighlight>
+                        <Text>Song Playing: {this.state.songPlaying}</Text>
+                    </View>
+                    <View style={styles.eqContainer}>
+                        <Text>High</Text>
+                        <SliderIOS
+                            style={styles.eq}
+                            minimumValue = {-20}
+                            maximumValue = {20}
+                            value = {0}                            
+                            onValueChange = {(eq) => this.onEQChange(eq, 'high')}
+                        />
+                        <Text>Mid</Text>
+                        <SliderIOS
+                            style={styles.eq}
+                            minimumValue = {-20}
+                            maximumValue = {20}
+                            value = {0}
+                            onValueChange = {(eq) => this.onEQChange(eq, 'mid')}
+                        />
+                        <Text>Low</Text>
+                        <SliderIOS
+                            style={styles.eq}
+                            minimumValue = {-20}
+                            maximumValue = {20}
+                            value = {0}
+                            onValueChange = {(eq) => this.onEQChange(eq, 'low')}
+                        />
+                    </View>
+
+     
               </View>
             );
         },
         onPressButton : function () {
             MediaController.showSongs();
+        },
+        onEQChange : function (value, type) {
+            MediaController.applyEQ(value, type);
         }
     }
 });
 
 var styles = StyleSheet.create({
+    mainContainer : {
+        flex : 1
+    },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  eqContainer : {
+    flex : 1,
+    // alignItems: 'stretch',
+    // flexDirection : 'row'
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  eq : {
+    margin : 20
+    // height: 20
+  }
 });
 
 AppRegistry.registerComponent('MCDJ', () => MCDJ);

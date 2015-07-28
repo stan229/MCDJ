@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RCTBridge.h"
 
-@interface NovocaineController : NSObject
+@interface NovocaineController : NSObject<RCTBridgeModule>
 
+-(id) init;
 
 -(void)playSong:(NSURL *)url;
+-(void)applyEQSettings:(NSNumber *)eqValue eqType:(NSString *)eqType;
 @end
